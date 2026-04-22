@@ -1,0 +1,22 @@
+.sidebar {
+  flex: 1; 
+  height: calc(100vh - 70px); 
+  position: sticky;
+  top: 70px;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+}
+
+.menuItem {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menuItem:hover {
+  background-color: #f0f2f5;
+}

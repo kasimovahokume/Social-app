@@ -1,0 +1,11 @@
+.mainContent {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.feed {
+  flex: 3; 
+}
