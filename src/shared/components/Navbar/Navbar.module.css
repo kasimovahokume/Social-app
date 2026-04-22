@@ -1,0 +1,55 @@
+.navbar {
+  background-color: #001e3c; /* Müəllimin istədiyi o tünd göy rəng */
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.navbarLogo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbarSearch {
+  flex: 0 1 40%; /* Axtarış hissəsi ortada geniş qalsın */
+}
+
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #d32f2f; /* Qırmızı bildiriş rəngi */
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* .user-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+} */
