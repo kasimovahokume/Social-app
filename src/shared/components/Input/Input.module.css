@@ -1,16 +1,17 @@
-/* From Uiverse.io by themrsami */ 
+/* From Uiverse.io by themrsami — navbar üçün uyğunlaşdırıldı */
 .searchContainer {
   position: relative;
-  width: 290px;
+  width: 100%; /* Navbar-ın flex child-ı idarə edir */
 }
 
 .searchBar {
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #1e1e1e;
-  border-radius: 8px;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 6px 12px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -20,41 +21,51 @@
   border: none;
   background: none;
   color: #fff;
-  font-size: 16px;
-  padding: 10px;
+  font-size: 14px;
+  padding: 6px 8px;
   outline: none;
 }
 
 .searchInput::placeholder {
-  color: #aaa;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
 }
 
 .searchIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background-color: #333;
+  padding: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  margin-left: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .searchIcon svg {
-  fill: #fff;
+  fill: rgba(255, 255, 255, 0.75);
+  width: 18px;
+  height: 18px;
 }
 
 .searchIcon:hover {
-  background-color: #555;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.searchIcon:hover svg {
+  fill: #fff;
 }
 
 .searchBar:hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.11);
 }
 
 .searchBar:focus-within {
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  border-color: rgba(46, 204, 135, 0.5);
+  background-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 3px rgba(46, 204, 135, 0.12);
 }
 
 .glow {
@@ -64,17 +75,13 @@
   width: 100%;
   height: 200%;
   border-radius: 100px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  background: radial-gradient(circle, rgba(46, 204, 135, 0.08), transparent);
   transition: all 0.5s ease;
   transform: translate(-50%, -50%) scale(0);
   z-index: -1;
-}
-
-.searchBar:hover + .glow {
-  transform: translate(-50%, -50%) scale(1);
+  pointer-events: none;
 }
 
 .searchBar:focus-within + .glow {
   transform: translate(-50%, -50%) scale(1.2);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
 }
