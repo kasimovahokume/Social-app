@@ -1,5 +1,6 @@
 import Navbar from "../../../../shared/components/Navbar"
 import Sidebar from "../../../../shared/components/Sidebar/Sidebar"
+import CreatePost from "./posts/components/CreatePost"
 import styles from "./SocialContainer.module.css"
 
 const SocialContainer = (() => {
@@ -12,6 +13,7 @@ const SocialContainer = (() => {
             <h2>Postlar burda olacaq</h2>
           </main>
         </div>
+        <CreatePost/>
     </div>
   )
 })

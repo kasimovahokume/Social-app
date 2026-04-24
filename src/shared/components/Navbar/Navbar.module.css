@@ -1,10 +1,13 @@
 .navbar {
-  background-color: #001e3c; /* Müəllimin istədiyi o tünd göy rəng */
+  background: linear-gradient(135deg, #001e3c 0%, #0a2a4a 100%);
   color: white;
-  padding: 10px 20px;
+  padding: 0 24px;
+  height: 64px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
 }
 
 .navbarContainer {
@@ -12,44 +15,116 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1400px;
+  height: 100%;
   margin: 0 auto;
+  gap: 24px;
 }
 
+/* --- LOGO --- */
 .navbarLogo {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.92);
+  user-select: none;
 }
 
+.logoAccent {
+  color: #2ecc87; 
+  font-size: 1.3rem;
+}
+
+/* --- SEARCH --- */
 .navbarSearch {
-  flex: 0 1 40%; /* Axtarış hissəsi ortada geniş qalsın */
+  flex: 0 1 420px;
+  display: flex;
+  justify-content: center;
 }
 
+/* --- ACTIONS --- */
 .navbarActions {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 6px;
 }
 
-.iconWrapper {
+/* İkon düymələri */
+.actionBtn {
   position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: scale(1.07);
+}
+
+.actionBtn:active {
+  transform: scale(0.96);
+}
+
+/* Bildiriş badge */
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #e53935;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #001e3c;
+  line-height: 1;
+}
+
+/* --- AVATAR --- */
+.avatarWrapper {
+  position: relative;
+  margin-left: 6px;
   cursor: pointer;
 }
 
-.badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background-color: #d32f2f; /* Qırmızı bildiriş rəngi */
-  color: white;
-  font-size: 10px;
-  padding: 2px 6px;
-  border-radius: 50%;
-}
-
-/* .user-avatar img {
+.avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #fff;
-} */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  display: block;
+}
+
+.avatarWrapper:hover .avatar {
+  border-color: #2ecc87;
+  transform: scale(1.05);
+}
+
+/* Online indicator */
+.onlineDot {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 10px;
+  height: 10px;
+  background: #2ecc87;
+  border-radius: 50%;
+  border: 2px solid #001e3c;
+}

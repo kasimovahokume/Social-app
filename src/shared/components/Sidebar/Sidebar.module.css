@@ -1,22 +1,101 @@
 .sidebar {
-  flex: 1; 
-  height: calc(100vh - 70px); 
+  flex: 1;
+  height: calc(100vh - 70px);
   position: sticky;
   top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 20px;
 }
 
 .menuList {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .menuItem {
-  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
   cursor: pointer;
-  border-radius: 8px;
-  transition: 0.3s;
+  border-radius: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+  color: #444;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .menuItem:hover {
   background-color: #f0f2f5;
+  color: #1a1a1a;
+}
+
+.menuIcon {
+  display: flex;
+  align-items: center;
+  color: #606770;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.menuItem:hover .menuIcon {
+  color: #2e8b57; /* seagreen — marka rəngi */
+}
+
+.menuLabel {
+  white-space: nowrap;
+}
+
+/* --- DARK MODE TOGGLE --- */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  color: #606770;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: background 0.3s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.toggle input:checked + .slider {
+  background-color: #2e8b57;
+}
+
+.toggle input:checked + .slider::before {
+  transform: translateX(18px);
 }
