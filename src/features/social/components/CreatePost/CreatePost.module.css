@@ -1,48 +1,26 @@
-.createPostCard {
-  background: #ffffff;
-  padding: 16px 20px;
-  border-radius: 14px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
-  max-width: 600px;
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.inputArea {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.userAvatar {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 2px solid #f0f2f5;
-  object-fit: cover;
-}
-
-/* --- ICON DÜYMƏSİ (dəyişdirilmədi) --- */
 .iconBtn {
-  width: 50px;
-  height: 50px;
+  position: fixed;
+  bottom: 36px;
+  right: 36px;        
+  z-index: 999;
+
+  width: 54px;
+  height: 54px;
   background: white;
-  border-radius: 25px;
-  border: 1.5px solid #000;
+  border-radius: 27px;
+  border: 1.5px solid #444;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
   overflow: hidden;
   padding: 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
 }
 
 .iconBtn:hover {
-  width: 150px;
+  width: 160px;
   border-color: seagreen;
 }
 
@@ -52,7 +30,6 @@
   position: absolute;
   background: seagreen;
   transition: all 0.3s ease;
-  border-radius: 50%;
   z-index: 2;
 }
 
@@ -106,7 +83,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 20, 30, 0.55);
+  background: rgba(15, 20, 30, 0.65);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
@@ -120,15 +97,15 @@
   to   { opacity: 1; }
 }
 
-/* --- MODAL KARTI --- */
 .modalContent {
   background: #fff;
   width: 480px;
+  max-width: 92vw;
   border-radius: 20px;
   padding: 32px;
   box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.06),
-    0 24px 60px rgba(0, 0, 0, 0.18);
+    0 0 0 1px rgba(0,0,0,0.06),
+    0 24px 60px rgba(0,0,0,0.22);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -140,12 +117,11 @@
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* --- MODAL BAŞLIĞI --- */
 .modalHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
 .modalTitle {
@@ -169,7 +145,6 @@
   align-items: center;
   justify-content: center;
   transition: background 0.15s ease, color 0.15s ease;
-  line-height: 1;
 }
 
 .closeX:hover {
@@ -177,7 +152,6 @@
   color: #ef4444;
 }
 
-/* --- FORM --- */
 .formLayout {
   display: flex;
   flex-direction: column;
@@ -218,7 +192,7 @@
 .modalTextarea:focus {
   border-color: seagreen;
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.12);
+  box-shadow: 0 0 0 3px rgba(46,139,87,0.12);
 }
 
 .modalTextarea {
@@ -227,7 +201,6 @@
   line-height: 1.6;
 }
 
-/* Placeholder rəngi */
 .modalInput::placeholder,
 .modalTextarea::placeholder {
   color: #c0c4cb;
@@ -237,10 +210,8 @@
   color: #ef4444;
   font-size: 12px;
   font-weight: 500;
-  margin-top: 2px;
 }
 
-/* --- POST DÜYMƏSİ --- */
 .submitBtn {
   background: seagreen;
   color: #fff;
@@ -255,15 +226,14 @@
   width: 100%;
   margin-top: 6px;
   transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(46, 139, 87, 0.3);
+  box-shadow: 0 4px 14px rgba(46,139,87,0.3);
 }
 
 .submitBtn:hover {
   background: #1e7a4a;
-  box-shadow: 0 6px 20px rgba(46, 139, 87, 0.4);
+  box-shadow: 0 6px 20px rgba(46,139,87,0.4);
 }
 
 .submitBtn:active {
   transform: scale(0.98);
-  box-shadow: 0 2px 8px rgba(46, 139, 87, 0.25);
 }

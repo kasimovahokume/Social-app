@@ -1,12 +1,16 @@
 .sidebar {
-  flex: 1;
-  height: calc(100vh - 70px);
+  width: 240px;
+  min-width: 240px;
+  flex-shrink: 0;
+
+  height: calc(100vh - 64px);
   position: sticky;
-  top: 70px;
+  top: 64px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding: 12px 8px 20px;
+  border-right: 1px solid rgba(255,255,255,0.06);
 }
 
 .menuList {
@@ -23,30 +27,30 @@
   cursor: pointer;
   border-radius: 10px;
   transition: background 0.2s ease, color 0.2s ease;
-  color: #444;
+  color: #9ca3af;
   font-size: 15px;
   font-weight: 500;
 }
 
 .menuItem:hover {
-  background-color: #f0f2f5;
-  color: #1a1a1a;
+  background-color: var(--border-color);
+  color: var(--text-main);
 }
 
 .menuIcon {
   display: flex;
   align-items: center;
-  color: #606770;
   flex-shrink: 0;
   transition: color 0.2s ease;
 }
 
 .menuItem:hover .menuIcon {
-  color: #2e8b57; /* seagreen — marka rəngi */
+  color: #2ecc87;
 }
 
 .menuLabel {
   white-space: nowrap;
+  color: var(--text-main); /* Sabit rəngi buna dəyiş */
 }
 
 /* --- DARK MODE TOGGLE --- */
@@ -55,7 +59,7 @@
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
-  color: #606770;
+  color: #6b7280;
 }
 
 .toggle {
@@ -75,7 +79,7 @@
 .slider {
   position: absolute;
   inset: 0;
-  background-color: #ccc;
+  background-color: #374151;
   border-radius: 22px;
   transition: background 0.3s ease;
 }
@@ -93,7 +97,7 @@
 }
 
 .toggle input:checked + .slider {
-  background-color: #2e8b57;
+  background-color: #2ecc87;
 }
 
 .toggle input:checked + .slider::before {
