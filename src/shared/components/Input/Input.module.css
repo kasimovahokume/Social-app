@@ -1,7 +1,6 @@
-/* From Uiverse.io by themrsami — navbar üçün uyğunlaşdırıldı */
 .searchContainer {
   position: relative;
-  width: 100%; /* Navbar-ın flex child-ı idarə edir */
+  width: 100%; 
 }
 
 .searchBar {

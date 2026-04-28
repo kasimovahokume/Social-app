@@ -12,37 +12,36 @@ const PostSchema = Yup.object().shape({
     .required("Şəkil linki mütləqdir"),
 });
 
-const CreatePost = ({ addPost }) => {
+const CreatePost = ({ onPostCreate }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) closeModal();
-  };
-
   const handlePostSubmit = (values, { resetForm }) => {
-    if (addPost) addPost(values);
+    if (onPostCreate) {
+      onPostCreate({
+        id: Date.now(),
+        userName: values.fullName,
+        text: values.content,
+        image: values.image,
+        date: "İndi"
+      });
+    }
     resetForm();
     closeModal();
   };
 
   return (
-    <div className={styles.createPostCard}>
+    <div className={styles.createPostWrapper}>
       <div className={styles.inputArea}>
-        <img
-          src="https://www.w3schools.com/howto/img_avatar.png"
-          alt="user"
-          className={styles.userAvatar}
-        />
-        <button type="button" className={styles.iconBtn} onClick={openModal}>
-          <span className={styles.btnTxt}>Add Post</span>
-        </button>
-      </div>
+         <button type="button" className={styles.iconBtn} onClick={openModal}>
+           <span className={styles.btnTxt}>Add Post</span>
+         </button>
+       </div>
 
       {isOpen && (
-        <div className={styles.modalOverlay} onClick={handleOverlayClick}>
+        <div className={styles.modalOverlay} onClick={(e) => e.target === e.currentTarget && closeModal()}>
           <div className={styles.modalContent}>
             <div className={styles.modalHeader}>
               <h3 className={styles.modalTitle}>Create post</h3>
@@ -55,7 +54,7 @@ const CreatePost = ({ addPost }) => {
               onSubmit={handlePostSubmit}
             >
               {() => (
-                <Form className={styles.formLayout}>
+                <Form className={styles.formLayout} style={{width: '100%'}}>
                   <div className={styles.fieldGroup}>
                     <label className={styles.fieldLabel}>Full Name</label>
                     <Field
