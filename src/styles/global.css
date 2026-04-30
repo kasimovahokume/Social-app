@@ -1,22 +1,46 @@
 :root {
-  --bg-main: #0e1117;
-  --bg-card: #161b22;
-  --text-main: #f3f4f6;
-  --text-dim: #9ca3af;
-  --border-color: rgba(255, 255, 255, 0.06);
-  --accent-color: #2ecc87;
+  /* === DARK MODE (default) === */
+  --bg-main:        #0d0f18;
+  --bg-card:        #161925;
+  --bg-sidebar:     #12151f;
+  --bg-hover:       rgba(139, 92, 246, 0.12);
+
+  --text-main:      #e8eaf0;
+  --text-dim:       #8b92a8;
+  --text-muted:     #545b72;
+
+  --border-color:   rgba(139, 92, 246, 0.15);
+  --border-subtle:  rgba(255,255,255,0.05);
+
+  --accent-color:   #8b5cf6;       
+  --accent-green:   #2ecc87;
+  --accent-glow:    rgba(139, 92, 246, 0.25);
+
+  --navbar-bg:      linear-gradient(135deg, #1a0533 0%, #2d1b69 50%, #1a0533 100%);
+  --card-shadow:    0 4px 24px rgba(0,0,0,0.4);
 }
 
 [data-theme='light'] {
-  /* Light Mode */
-  --bg-main: #f0f2f5;
-  --bg-card: #ffffff;
-  --text-main: #1a1a1a;
-  --text-dim: #65676b;
-  --border-color: #e4e6eb;
-  --accent-color: #1877f2;
-}
+  /* === LIGHT MODE === */
+  --bg-main:        #f0edfb;        
+  --bg-card:        #ffffff;
+  --bg-sidebar:     #faf8ff;
+  --bg-hover:       rgba(139, 92, 246, 0.08);
 
+  --text-main:      #1e1b4b;        
+  --text-dim:       #6b6b8a;
+  --text-muted:     #a0a0b8;
+
+  --border-color:   rgba(139, 92, 246, 0.2);
+  --border-subtle:  rgba(139, 92, 246, 0.1);
+
+  --accent-color:   #7c3aed;
+  --accent-green:   #065f46;
+  --accent-glow:    rgba(124, 58, 237, 0.15);
+
+  --navbar-bg:      linear-gradient(135deg, #4c1d95 0%, #7c3aed 50%, #4c1d95 100%);
+  --card-shadow:    0 4px 20px rgba(139, 92, 246, 0.12);
+}
 body {
   background-color: var(--bg-main);
   color: var(--text-main);

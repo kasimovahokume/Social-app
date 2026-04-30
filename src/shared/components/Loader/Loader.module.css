@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 400px; 
+  position: relative;
+}
+
+.loader {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: girar 8s linear infinite;
+}
+
+.sphere {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transform: rotate(calc(var(--rot) * 20deg));
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 50%;
+  background: var(--bg);
+  transform: rotateY(calc(var(--rot-y) * 40deg));
+}
+
+
+.sphere1 { --bg: #f008; }
+.sphere2 { --bg: #f0f8; }
+.sphere3 { --bg: #ff08; }
+.sphere4 { --bg: #0f08; }
+.sphere5 { --bg: #0ff8; }
+.sphere6 { --bg: #00f8; }
+.sphere7 { --bg: #dc1ddf88; }
+.sphere8 { --bg: #ffa50088; }
+.sphere9 { --bg: #e5b2ca88; }
+
+@keyframes girar {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
+}

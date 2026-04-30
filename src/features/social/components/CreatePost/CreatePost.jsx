@@ -112,7 +112,7 @@ const CreatePost = ({ onPostCreate }) => {
 };
 
 CreatePost.propTypes = {
-  addPost: PropTypes.func.isRequired,
+  onPostCreate: PropTypes.func.isRequired,
 };
 
 export default CreatePost;

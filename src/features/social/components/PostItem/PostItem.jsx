@@ -1,4 +1,5 @@
 import styles from "./PostItem.module.css";
+import PropTypes from "prop-types";
 
 const PostItem = ({ post, onDelete }) => {
   const radioName = `feedback-${post.id}`; 
@@ -13,8 +14,8 @@ const PostItem = ({ post, onDelete }) => {
           alt="user"
         />
         <div className={styles.userInfo}>
-          <h4>{post.fullName || post.userName || "Anonim"}</h4>
-          <span>Az əvvəl</span>
+          <h4>{post.userName ? post.userName : (post.fullName ? post.fullName : "Anonim")}</h4>
+          <span>{post.date || "Az əvvəl"}</span>
         </div>
         <button className={styles.deleteBtn} onClick={() => onDelete(post.id)}>
           <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -89,4 +90,8 @@ const PostItem = ({ post, onDelete }) => {
   );
 };
 
+PostItem.propTypes = {
+  post: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
 export default PostItem;

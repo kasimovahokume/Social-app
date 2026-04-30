@@ -1,18 +1,18 @@
 import Input from "../Input";
 import styles from "./Navbar.module.css";
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navbarContainer}>
         {/* LOGO */}
         <div className={styles.navbarLogo}>
-          <span className={styles.logoAccent}>S</span>ocial
+          <span className={styles.logoAccent}>S</span>ocialApp
         </div>
 
         {/* SEARCH */}
         <div className={styles.navbarSearch}>
-          <Input />
+          <Input onSearch={onSearch} />
         </div>
 
         {/* ACTIONS */}

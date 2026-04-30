@@ -3,12 +3,11 @@
   bottom: 36px;
   right: 36px;        
   z-index: 999;
-
   width: 54px;
   height: 54px;
-  background: white;
+  background: var(--accent-color);
   border-radius: 27px;
-  border: 1.5px solid #444;
+  border: 1.5px solid var(--border-color);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -16,19 +15,20 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   padding: 0;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 4px 20px var(--accent-glow);
 }
 
 .iconBtn:hover {
   width: 160px;
-  border-color: seagreen;
+  border-color: var(--accent-green);
+  box-shadow: 0 6px 28px var(--accent-glow)
 }
 
 .iconBtn::before,
 .iconBtn::after {
   content: "";
   position: absolute;
-  background: seagreen;
+  background: var(--accent-green);
   transition: all 0.3s ease;
   z-index: 2;
 }
@@ -67,7 +67,7 @@
 }
 
 .btnTxt {
-  color: seagreen;
+  color: var(--accent-green);
   font-size: 15px;
   font-weight: 600;
   opacity: 0;
@@ -83,7 +83,7 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 20, 30, 0.65);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
@@ -98,7 +98,8 @@
 }
 
 .modalContent {
-  background: #fff;
+  background:var(--bg-card);
+  border: 1px solid var(--border-color);
   width: 480px;
   max-width: 92vw;
   border-radius: 20px;
@@ -127,7 +128,7 @@
 .modalTitle {
   font-size: 20px;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-main);
   letter-spacing: -0.3px;
   margin: 0;
 }
@@ -137,8 +138,8 @@
   height: 34px;
   border-radius: 50%;
   border: none;
-  background: #f3f4f6;
-  color: #6b7280;
+  background: var(--bg-hover);
+  color: var(--text-dim);
   font-size: 16px;
   cursor: pointer;
   display: flex;
@@ -170,19 +171,19 @@
   font-weight: 600;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #6b7280;
+  color: var(--text-dim);
 }
 
 .modalInput,
 .modalTextarea {
   width: 100%;
   padding: 11px 14px;
-  border: 1.5px solid #e5e7eb;
+  border: 1.5px solid var(--border-color);
   border-radius: 10px;
   box-sizing: border-box;
   font-size: 15px;
-  color: #111827;
-  background: #fafafa;
+  color: var(--text-main);
+  background: var(--bg-main);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   outline: none;
   font-family: inherit;
@@ -190,9 +191,9 @@
 
 .modalInput:focus,
 .modalTextarea:focus {
-  border-color: seagreen;
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(46,139,87,0.12);
+  border-color: var(--accent-color);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
 .modalTextarea {
@@ -203,7 +204,7 @@
 
 .modalInput::placeholder,
 .modalTextarea::placeholder {
-  color: #c0c4cb;
+  color: var(--text-muted);
 }
 
 .error {
@@ -213,7 +214,7 @@
 }
 
 .submitBtn {
-  background: seagreen;
+  background: var(--accent-color);
   color: #fff;
   padding: 13px;
   border: none;
@@ -226,12 +227,12 @@
   width: 100%;
   margin-top: 6px;
   transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(46,139,87,0.3);
+  box-shadow: 0 4px 14px var(--accent-glow)
 }
 
 .submitBtn:hover {
-  background: #1e7a4a;
-  box-shadow: 0 6px 20px rgba(46,139,87,0.4);
+  filter: brightness(1.15);
+  box-shadow: 0 6px 20px var(--accent-glow);
 }
 
 .submitBtn:active {
